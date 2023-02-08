@@ -10,11 +10,16 @@ Admin Create - Admin Panel
 
 <style>
     input[type="text"]{
-        outline: none;
-        border: none;
-        background: none;
-        font-weight: 300;
+        font-weight: 500;
+        border:1px solid #0069D9;;
+        color: black;
+        height:4vh;
+        width: 100px;
+        text-align: center;
+        font-size: 20px;
+       margin-right: 10px;
     }
+ 
     .list{
         display: flex;
         flex-direction: row;
@@ -29,14 +34,55 @@ Admin Create - Admin Panel
         font-weight: 700;
     }
     table tr{
-        border: none;
-        outline: none;
+        border: 2px solid #0069D9;
+        text-align: center;
     }
-    .layout{
+    table thead tr th{
+        border: 1px solid #0069D9;
+    }
+       .layout{
         display: flex;
         flex-direction: row;
         margin-top: 0;
     }
+    .bl,th{
+        font-size: 20px;
+    }
+    .bl{
+        font-weight: bold;
+       text-align: left;
+    }
+    .underline{
+    height: 2px;
+    width: 100px;
+    background: #0069D9;
+    border-radius: 30px;
+  }
+  .confirm{
+    background: #0069D9;
+    color: white;
+  }
+  .cancel{
+    background: #f40303;
+    color: white;
+  }
+  .confirm,.cancel{
+    width: 200px;
+    height: 40px;
+    border-radius: 9px;
+    border: none;
+    outline: none;
+  }
+  .buttons{
+    display: flex; 
+    justify-content: flex-end;
+    margin-top: 3rem;
+ 
+  }
+  .buttons button{
+  margin-left: 1em;
+}
+  
 </style>
 @endsection
 
@@ -70,13 +116,8 @@ Admin Create - Admin Panel
             <div class="card">
                 <div class="card-body">
                     <h4 class="header-title">Weekly Work Tracker</h4>
-                    @include('backend.layouts.partials.messages')
-                  
-                  
-                            
-                        </head>
-                        <body>
-                           
+                    <div class="underline"></div>
+                    @include('backend.layouts.partials.messages')                           
                             <div class="layout">
                                 <div class="outer">
                                     <form class="List">
@@ -90,64 +131,67 @@ Admin Create - Admin Panel
                                 </div>
                                 <div class="table">
                                     <table border="1px">
-                                        
-                                        <thead>
-                                            <tr>
-                                                <th>Day</th>
-                                                <th>Monday</th>
-                                                <th>Twesday</th>
-                                                <th>Wednesday</th>
-                                                <th>Thurshday</th>
-                                                <th>Friday</th>
-                                                <th>Saturday</th>
-                                                <th>Total Hours</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Week 1</td>
-                                                <td>24</td>
-                                                <td>41</td>
-                                                <td>15</td>
-                                                <td>10</td>
-                                                <td>74</td>
-                                                <td>10</td>
-                                                <td>174</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Work Done</td>
-                                                <td>Html</td>
-                                                <td>html</td>
-                                                <td>html</td>
-                                                <td>html</td>
-                                                <td>html</td>
-                                                <td>html</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Appruval</td>
-                                                <td>Appruved</td>
-                                                <td>Appruved</td>
-                                                <td>Pending</td>
-                                                <td>Appruved</td>
-                                                <td>Appruved</td>
-                                                <td>Appruved</td>
-                                            </tr>
-                                        </tbody>
+                                      <thead>
+                                        <tr>
+                                          <th>Day</th>
+                                          <th>Monday</th>
+                                          <th>Twesday</th>
+                                          <th>Wednesday</th>
+                                          <th>Thurshday</th>
+                                          <th>Friday</th>
+                                          <th>Saturday</th>
+                                          <th>Total Hours</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td class="bl">Week 1</td>
+                                          <td>24</td>
+                                          <td>41</td>
+                                          <td>15</td>
+                                          <td>10</td>
+                                          <td>74</td>
+                                          <td>10</td>
+                                          <td>174</td>
+                                        </tr>
+                                        <tr>
+                                          <td class="bl">Work Done</td>
+                                          <td>Html</td>
+                                          <td>html</td>
+                                          <td>html</td>
+                                          <td>html</td>
+                                          <td>html</td>
+                                          <td>html</td>
+                                          <td></td>
+                                        </tr>
+                                        <tr>
+                                          <td class="bl">Appruval</td>
+                                          <td>Appruved</td>
+                                          <td>Appruved</td>
+                                          <td>Pending</td>
+                                          <td>Appruved</td>
+                                          <td>Appruved</td>
+                                          <td>Approved</td>
+                                          <td></td>
+                                        </tr>
+                                      </tbody>
                                     </table>
-                                </div>
+                                    <div >
+                                      <div class="buttons">
+                                        <button class="confirm" type="submit">Confirm</button>
+                                        <button class="cancel" type="submit">Cancel</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
                             </div>
+                        </div>
                         
-                    
-
-
-                  
-                </div>
-            </div>
+                 </div>
         </div>
-        <!-- data table end -->
-        
     </div>
 </div>
+        
 @endsection
 
 @section('scripts')
