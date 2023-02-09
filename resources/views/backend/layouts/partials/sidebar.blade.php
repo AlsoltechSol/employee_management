@@ -59,6 +59,7 @@
                     </li>
                     @endif
 
+
                     <!-- Employeee Management -->
                     
                     <li>
@@ -78,6 +79,31 @@
 
                     <!-- End Employeee Management -->
 
+
+
+
+
+                    <li>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-user"></i><span>
+                            Leaves
+                        </span></a>
+                        <ul class="collapse {{ Route::is('admin.admins.create') || Route::is('admin.admins.index') || Route::is('admin.admins.edit') || Route::is('admin.admins.show') ? 'in' : '' }}">
+                            
+                        
+                                <li class="{{ Route::is('admin.admins.index')  || Route::is('admin.admins.edit') ? 'active' : '' }}"><a href="">Leave</a></li>
+                         
+
+                                <li class="{{ Route::is('admin.admins.create')  ? 'active' : '' }}"><a href="{{ route('admin.leaverequest.create') }}">Create Leave</a></li>
+
+                                <li class="{{ Route::is('admin.admins.create')  ? 'active' : '' }}"><a href="{{ route('admin.monthlysummary.create') }}">Monthly Summary</a></li>
+
+                                <li class="{{ Route::is('admin.admins.create')  ? 'active' : '' }}"><a href="{{ route('admin.worktracker.create') }}">Work Tracker</a></li>
+                          
+                        </ul>
+                    </li>
+
+
+                  
                 </ul>
             </nav>
         </div>

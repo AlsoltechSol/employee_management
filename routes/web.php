@@ -35,6 +35,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('holiday-master', 'Backend\Employee_Management\HolidayMasterController', ['names' => 'admin.holidayMaster']);
 
 
+
+
+    Route::resource('leave-request', 'Backend\LeaveRequestController', ['names' => 'admin.leaverequest']);
+    Route::resource('monthly', 'Backend\MonthlySummaryController', ['names' => 'admin.monthlysummary']);
+    Route::resource('tracker', 'Backend\WorkTrackerController', ['names' => 'admin.worktracker']);
+
+
     // Login Routes
     Route::get('/login', 'Backend\Auth\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login/submit', 'Backend\Auth\LoginController@login')->name('admin.login.submit');
