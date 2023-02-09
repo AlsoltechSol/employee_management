@@ -30,6 +30,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('roles', 'Backend\RolesController', ['names' => 'admin.roles']);
     Route::resource('users', 'Backend\UsersController', ['names' => 'admin.users']);
     Route::resource('admins', 'Backend\AdminsController', ['names' => 'admin.admins']);
+    Route::resource('add-designation', 'Backend\Employee_Management\AddDesignationController', ['names' => 'admin.add_designation']);
+    Route::resource('add-employee', 'Backend\Employee_Management\EmployeeController', ['names' => 'admin.add_employee']);
+    Route::resource('holiday-master', 'Backend\Employee_Management\HolidayMasterController', ['names' => 'admin.holidayMaster']);
 
 
     // Login Routes

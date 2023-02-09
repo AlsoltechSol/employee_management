@@ -23,3 +23,9 @@
         </div>
     </div>
 @endif
+<script type="text/javascript">
+	
+ setTimeout(function() {
+        $('.alert').remove();
+    }, 8000);
+</script>

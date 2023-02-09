@@ -59,6 +59,25 @@
                     </li>
                     @endif
 
+                    <!-- Employeee Management -->
+                    
+                    <li>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-user-plus"></i><span>
+                            Employee Management
+                        </span></a>
+                        <ul class="collapse {{ Route::is('admin.admins.create') || Route::is('admin.admins.index') || Route::is('admin.admins.edit') || Route::is('admin.admins.show') ? 'in' : '' }}">
+                                
+                                <li class="{{ Route::is('admin.admins.index')  || Route::is('admin.admins.edit') ? 'active' : '' }}"><a href="{{route('admin.add_designation.index')}}">Designation</a></li>
+                                <li class="{{ Route::is('admin.admins.index')  || Route::is('admin.admins.edit') ? 'active' : '' }}"><a href="">Employee</a></li>
+                                <li class="{{ Route::is('admin.admins.index')  || Route::is('admin.admins.edit') ? 'active' : '' }}"><a href="{{route('admin.holidayMaster.index')}}">Holiday Master</a></li>
+  
+                        </ul>
+                    </li>
+                    
+
+
+                    <!-- End Employeee Management -->
+
                 </ul>
             </nav>
         </div>
