@@ -98,6 +98,9 @@
                                 <li class="{{ Route::is('admin.admins.create')  ? 'active' : '' }}"><a href="{{ route('admin.monthlysummary.create') }}">Monthly Summary</a></li>
 
                                 <li class="{{ Route::is('admin.admins.create')  ? 'active' : '' }}"><a href="{{ route('admin.worktracker.create') }}">Work Tracker</a></li>
+                                <li class="{{ Route::is('admin.admins.create')  ? 'active' : '' }}"><a href="{{ route('admin.salaryslip.create') }}">Salary Slip</a></li>
+                                
+                                <li class="{{ Route::is('admin.admins.create')  ? 'active' : '' }}"><a href="{{ route('admin.companyprofile.create') }}">Company Profile</a></li>
                           
                         </ul>
                     </li>

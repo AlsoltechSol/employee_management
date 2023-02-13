@@ -9,6 +9,9 @@ Admin Create - Admin Panel
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 
 <style>
+  table{
+    margin-left: 30px;
+  }
     input[type="text"]{
         font-weight: 500;
         border:1px solid #0069D9;;
@@ -77,7 +80,7 @@ Admin Create - Admin Panel
     display: flex; 
     justify-content: flex-end;
     margin-top: 3rem;
- 
+    margin-right: 61px;
   }
   .buttons button{
   margin-left: 1em;
@@ -176,12 +179,12 @@ Admin Create - Admin Panel
                                         </tr>
                                       </tbody>
                                     </table>
-                                    <div >
+                                    
                                       <div class="buttons">
                                         <button class="confirm" type="submit">Confirm</button>
                                         <button class="cancel" type="submit">Cancel</button>
                                       </div>
-                                    </div>
+                                   
                                   </div>
                                   
                             </div>

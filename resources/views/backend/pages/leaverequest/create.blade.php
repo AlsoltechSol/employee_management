@@ -19,7 +19,7 @@ Admin Create - Admin Panel
         align-items: center;
     }
     input[type="date"]{
-        width: 500px;
+        width: 400px;
     }
     .leave{
       width: 200px;
@@ -38,7 +38,28 @@ Admin Create - Admin Panel
         text-align: center;
        
     }
-        
+    .fromdate,.todate{
+        margin-right: 93px;
+    }
+    .disable{
+        width: 397px;
+    }
+    .available{
+        margin-right: 19px;
+    }
+    .total{
+        margin-right: 70px;
+    }
+    .leave{
+        margin-right: -44px;
+    }
+    .numberofleave{
+        margin-left: -239px;
+    margin-right: 56px;
+    }
+    /* .radiotype{
+        padding: 5px;
+    } */
 </style>
 @endsection
 
@@ -78,7 +99,7 @@ Admin Create - Admin Panel
         <form>
             <div class="form-row row ">
                 <div class="col-md-6 mb-3 d-flex">
-                    <label for="validationDefault01">From date</label>
+                    <label for="validationDefault01 " class="fromdate">From date</label>
                     <input
                         type="date"
                         class="form-control"
@@ -88,7 +109,7 @@ Admin Create - Admin Panel
                     >
                 </div>
                 <div class="col-md-6 mb-3 d-flex">
-                    <label for="validationDefault02 ">To date</label>
+                    <label for="validationDefault02"  class="todate">To date</label>
                     <input
                         type="date"
                         class="form-control"
@@ -99,31 +120,28 @@ Admin Create - Admin Panel
             </div>
             <div class="form-row row d-flex">
                 <div class="col-md-6 mb-3 d-flex">
-                    <label for="validationDefault03">Available casual leaves</label>
+                    <label for="validationDefault03 " class="available">Available casual leaves</label>
                     <input
                         type="text"
-                        class="form-control"
+                        class="form-control disable"
                         id="validationDefault03"
                         disabled
                     >
                 </div>
                 <div class="col-md-6 mb-3 d-flex">
-                    <label for="validationDefault04">Leave type</label>
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-primary class=" leave " ">
-                            <input type="radio" name="options" id="option1">
-                            CL
-                        </label>
-                        <label class="btn btn-primary class=" leave "">
-                            <input type="radio" name="options" id="option2">
-                            PL
-                        </label>
-                    </div>
+                    <label for="validationDefault03" class="total">Total leaves</label>
+                    <input
+                        type="text"
+                        class="form-control disable"
+                        id="validationDefault03"
+                        disabled
+                    >
                 </div>
+               
             </div>
             <div class="form-row row">
                 <div class="col-md-6 mb-3">
-                    <label for="validationDefault04">Leave Catagory</label>
+                    <label for="validationDefault04" class="leave">Leave Catagory</label>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-primary class=" leave " ">
                             <input type="radio" name="options" id="option1">
@@ -135,30 +153,35 @@ Admin Create - Admin Panel
                         </label>
                     </div>
                 </div>
-                <div class="col-md-6 mb-3">
-                    <label for="validationDefault03">Total leaves</label>
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="validationDefault03"
-                        disabled
-                    >
+                <div class="col-md-6 mb-3 d-flex">
+                    <label for="validationDefault04" class="numberofleave">Leave type</label>
+                    <div class="btn-group btn-group-toggle radiotype" data-toggle="buttons">
+                        <label class="btn btn-primary class=" leave " ">
+                            <input type="radio" name="options" id="option1">
+                            Full Day
+                        </label>
+                        <label class="btn btn-primary class=" leave "">
+                            <input type="radio" name="options" id="option2">
+                            Half day
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <div class="form-row row">
                 <div class="col-md-6 mb-3">
-                    <label for="validationDefault04">Number of Leaves</label>
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label for="validationDefault04" >Number of Leaves</label>
+                    <div class="btn-group btn-group-toggle radiotype" data-toggle="buttons">
                         <label class="btn btn-primary class=" leave " ">
                             <input type="radio" name="options" id="option1">
                             -CL+
-                        </label>
+                        </label>&nbsp;
                         <label class="btn btn-primary class=" leave "">
                             <input type="radio" name="options" id="option2">
                             -EL+
                         </label>
                     </div>
                 </div>
+            </div>
+            <div class="form-row row">
+                
                 <div class="col-md-6 mb-3">
                     <label for="validationDefault03">Upload Documents</label>
                     <input type="File" class="form-control" id="validationDefault03">

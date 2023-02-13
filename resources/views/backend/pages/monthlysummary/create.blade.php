@@ -24,8 +24,12 @@ Admin Create - Admin Panel
       padding: 8px;
       border: 1px solid #0069D9;
     }
-    table thead tr th{
+    table tr th{
         border: 1px solid #0069D9;
+    }
+    thead{
+        /* border: 1px solid #0069D9; */
+        outline: 1px solid #0069D9;
     }
     table tbody tr:hover {
     background-color: #bdb0b0;

@@ -40,6 +40,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('leave-request', 'Backend\LeaveRequestController', ['names' => 'admin.leaverequest']);
     Route::resource('monthly', 'Backend\MonthlySummaryController', ['names' => 'admin.monthlysummary']);
     Route::resource('tracker', 'Backend\WorkTrackerController', ['names' => 'admin.worktracker']);
+    Route::resource('salaryslip', 'Backend\SalarySlipController', ['names' => 'admin.salaryslip']);
+    Route::resource('companyprofile', 'Backend\CompanyProfileController', ['names' => 'admin.companyprofile']);
 
 
     // Login Routes
