@@ -29,14 +29,12 @@ Admin Create - Admin Panel
         height:20vh;
     }
     .leavetable{
-        width:50%;
-  
-        margin-top: 2px;
-        
+        width:100%;
+        margin-top: 10px;         
     }
     .leavetable th,td{
         text-align: center;
-       
+        border: 1px solid black;   
     }
     .fromdate,.todate{
         margin-right: 93px;
@@ -53,13 +51,60 @@ Admin Create - Admin Panel
     .leave{
         margin-right: -44px;
     }
-    .numberofleave{
-        margin-left: -239px;
-    margin-right: 56px;
+    .leavetype{
+        margin-left: 5px;
+        margin-right: 71px;
     }
     /* .radiotype{
         padding: 5px;
     } */
+    input[type="number"]{
+        width: 147px;
+        height: 5vh;
+        margin: auto;
+        text-align: center;
+      }
+      .leave_buttons {
+  /* padding: 10px 20px; */
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+}
+.leavenumber{
+margin-right:39px; 
+}
+.leave-catagory{
+    width: 193px;
+}
+.leave-type{
+    width: 193px;
+}
+input[type="file"]{
+    width:390px;
+}
+.documents{
+    margin-right: 25px;
+}
+.reason{
+    width: 1101px;
+}
+.leavestatus{
+    margin-top: 12px;
+}
+.status{
+    font-size: 26px;
+    font-weight: bold;
+}
+.submit{
+    display: flex;
+    justify-content: flex-end;    
+}
+.submit button{
+    width: 188px;
+    height: 5vh;
+   
+    color: white;
+}
 </style>
 @endsection
 
@@ -139,70 +184,74 @@ Admin Create - Admin Panel
                 </div>
                
             </div>
-            <div class="form-row row">
-                <div class="col-md-6 mb-3">
+            <div class="form-row row d-flex">
+                <div class="col-md-6 mb-3 ">
                     <label for="validationDefault04" class="leave">Leave Catagory</label>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-primary class=" leave " ">
+                        <label class="btn btn-primary leave-catagory">
                             <input type="radio" name="options" id="option1">
                             CL
-                        </label>
-                        <label class="btn btn-primary class=" leave "">
+                        </label>&nbsp;&nbsp;&nbsp;&nbsp; 
+                        <label class="btn btn-primary leave-catagory">
                             <input type="radio" name="options" id="option2">
                             EL
                         </label>
                     </div>
                 </div>
-                <div class="col-md-6 mb-3 d-flex">
-                    <label for="validationDefault04" class="numberofleave">Leave type</label>
+                <div class="col-md-6 mb-3 d-flex ">
+                    <label for="validationDefault04" class="leavetype">Leave type</label>
                     <div class="btn-group btn-group-toggle radiotype" data-toggle="buttons">
-                        <label class="btn btn-primary class=" leave " ">
+                        <label class="btn btn-primary leave-type ">
                             <input type="radio" name="options" id="option1">
                             Full Day
-                        </label>
-                        <label class="btn btn-primary class=" leave "">
+                        </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label class="btn btn-primary leave-type">
                             <input type="radio" name="options" id="option2">
                             Half day
                         </label>
                     </div>
                 </div>
-                <div class="col-md-6 mb-3">
-                    <label for="validationDefault04" >Number of Leaves</label>
-                    <div class="btn-group btn-group-toggle radiotype" data-toggle="buttons">
-                        <label class="btn btn-primary class=" leave " ">
-                            <input type="radio" name="options" id="option1">
-                            -CL+
-                        </label>&nbsp;
-                        <label class="btn btn-primary class=" leave "">
-                            <input type="radio" name="options" id="option2">
-                            -EL+
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-row row">
                 
-                <div class="col-md-6 mb-3">
-                    <label for="validationDefault03">Upload Documents</label>
+                    
+                 
+                 
+            </div>
+            <div style="display: flex;">
+                        
+                <div >
+                  <label for="leaves" class="leavenumber">Number of Leaves:</label>
+                  <label for="CL">CL:</label>
+                  <button type="button" id="decrease-CL" class="leave_buttons">-</button>
+                  <input type="number" id="CL" name="CL" value="0" >
+                  <button type="button" id="increase-CL" class="leave_buttons">+</button>
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                <div >
+                  <label for="PL">PL:</label>
+                  <button type="button" id="decrease-PL" class="leave_buttons">-</button>
+                  <input type="number" id="PL" name="PL" value="0" >
+                  <button type="button" id="increase-PL" class="leave_buttons">+</button>
+                </div>
+                <div class="col-md-6 mb-3 d-flex">
+                    <label for="validationDefault03" class="documents">Upload Documents</label>
                     <input type="File" class="form-control" id="validationDefault03">
                 </div>
             </div>
+            
             <div class="form-row">
                 <div class="col-md-3 mb-3">
                     <label for="validationDefault03">Reason</label>
-                    <textarea name="Reason" cols="100" rows="5"></textarea>
+                    <textarea name="Reason" cols="100" rows="5" class="reason"></textarea>
                 </div>
             </div>
         </form>
         <table class="leavetable">
             <h2>Leave distibution</h2>
-            <thead>
+           
                 <tr>
                     <th>Paid Leaves</th>
                     <th>Unpaid Leaves</th>
                 </tr>
-            </thead>
-            <tbody>
+            
                 <tr>
                     <td>1</td>
                     <td>2</td>
@@ -210,11 +259,19 @@ Admin Create - Admin Panel
                 <tr>
                     <td>1</td>
                     <td>2</td>
-                </tr>
-            </tbody>
+       
         </table>
 
-
+<div class="leavestatus" d-flex" >
+    <label class="status">Leave Status</label>
+    <select name="appruval" id="">
+        <option value="Appruved">Appruved</option>
+        <option value="Rejected">Rejected</option>
+    </select>
+</div>
+<div class="submit">
+    <button class="btn-primary" type="submit">Submit</button>
+</div>
                   
                 </div>
             </div>
@@ -232,4 +289,30 @@ Admin Create - Admin Panel
         $('.select2').select2();
     })
 </script>
+<script>
+    const decreaseOption1 = document.getElementById("decrease-CL");
+const increaseOption1 = document.getElementById("increase-CL");
+const CL = document.getElementById("CL");
+
+const decreaseOption2 = document.getElementById("decrease-PL");
+const increaseOption2 = document.getElementById("increase-PL");
+const PL = document.getElementById("PL");
+
+decreaseOption1.addEventListener("click", function() {
+CL.value = parseInt(CL.value) - 1;
+});
+
+increaseOption1.addEventListener("click", function() {
+CL.value = parseInt(CL.value) + 1;
+});
+
+decreaseOption2.addEventListener("click", function() {
+PL.value = parseInt(PL.value) - 1;
+});
+
+increaseOption2.addEventListener("click", function() {
+PL.value = parseInt(PL.value) + 1;
+});
+
+  </script>
 @endsection

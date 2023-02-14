@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      input[type="number"]{
+        width: 50px;
+        margin: auto;
+    text-align: center;
+      }
+    </style>
+</head>
+<body>
+  <form >
+    <div style="display: flex;">
+      <div>
+        <label for="leaves">Number of Leaves:</label>
+      </div>
+      <div style="display: flex;">
+        <div >
+          <label for="CL">Option 1:</label>
+          <button type="button" id="decrease-CL">-</button>
+          <input type="number" id="CL" name="CL" value="0" >
+          <button type="button" id="increase-CL">+</button>
+        </div>
+        <div >
+          <label for="PL">Option 2:</label>
+          <button type="button" id="decrease-PL">-</button>
+          <input type="number" id="PL" name="PL" value="0" >
+          <button type="button" id="increase-PL">+</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  
+  
+      <script>
+        const decreaseOption1 = document.getElementById("decrease-CL");
+const increaseOption1 = document.getElementById("increase-CL");
+const CL = document.getElementById("CL");
+
+const decreaseOption2 = document.getElementById("decrease-PL");
+const increaseOption2 = document.getElementById("increase-PL");
+const PL = document.getElementById("PL");
+
+decreaseOption1.addEventListener("click", function() {
+  CL.value = parseInt(CL.value) - 1;
+});
+
+increaseOption1.addEventListener("click", function() {
+  CL.value = parseInt(CL.value) + 1;
+});
+
+decreaseOption2.addEventListener("click", function() {
+  PL.value = parseInt(PL.value) - 1;
+});
+
+increaseOption2.addEventListener("click", function() {
+  PL.value = parseInt(PL.value) + 1;
+});
+
+      </script>
+</body>
+</html>
